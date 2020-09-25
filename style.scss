@@ -1,3 +1,25 @@
+$colors:(
+    primary: #45a29e, 
+    primary-light: #66fcf1,
+);
+
+@function color($color-name){
+    @retrurn map-get($colors, $color-name);
+}
+
 body{
-    background-color: red;
+    background-color: rgb(color(primary-light));
+}
+
+//pixels are for monkeys, rem OR relative units, 1rem = 10 pixels, vw = viewport width AND vh = viewport height
+html, body{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-size: 62.5%;
+}
+
+.header{
+    height: 100vh;
+    background-image:('')
 }
