@@ -4,11 +4,11 @@ $colors:(
 );
 
 @function color($color-name){
-    @retrurn map-get($colors, $color-name);
+    @return map-get($colors, $color-name);
 }
 
 body{
-    background-color: rgb(color(primary-light));
+    background-color:color(primary);
 }
 
 //pixels are for monkeys, rem OR relative units, 1rem = 10 pixels, vw = viewport width AND vh = viewport height
@@ -21,5 +21,38 @@ html, body{
 
 .header{
     height: 100vh;
-    background-image:('')
+    background-image:linear-gradient(
+        to right bottom,
+        rgba(color(primary), .05),
+        rgba(color(primary-light), 0.5)
+    ),
+    url(images/headphones-bg.jpg);
+    background-size: cover;
+    display: flex;
+    /*
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+    */
+    position:relative;
+}
+
+.header-text-box{
+    position:absolute;
+    top:40%;
+    left:50%;
+    transform:translate(-50%, -50%);
+}
+
+.header-primary{
+
+}
+
+.header-primary-main{
+    dispay: block;
+    font-size:10rem;
+}
+
+.headr-primary-sub{
+    font-size:4rem;
 }
